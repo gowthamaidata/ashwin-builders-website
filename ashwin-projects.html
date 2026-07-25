@@ -11,11 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --teal:#16453c;--teal-2:#1d5a4e;--teal-soft:#2e6b5e;
-    --cream:#fbf7ef;--white:#fff;--mint:#e6f2ea;--peach:#fdeeda;
-    --gold:#f4b64a;--gold-deep:#d99a1f;
-    --ink:#25332e;--muted:#6b7a73;--line:#e9e2d4;
-    --r:20px;--shadow:0 12px 34px rgba(22,69,60,.10);
+    --deep:#23303d;--deep-2:#33455a;--deep-soft:#5a6e85;
+    --cream:#faf6f1;--white:#fff;--sand:#f3ece3;--blush:#f8ece8;
+    --gold:#c8a76a;--gold-deep:#8a6a2c;
+    --ink:#2b3540;--muted:#6d7a88;--line:#e7ded2;
+    --r:20px;--shadow:0 12px 34px rgba(35,48,61,.10);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
@@ -29,54 +29,55 @@
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:600;font-size:.88rem;transition:.3s;cursor:pointer;border:none}
   .btn .ar{transition:.3s}
   .btn:hover .ar{transform:translateX(5px)}
-  .btn-gold{background:var(--gold);color:#3a2b06;box-shadow:0 10px 26px rgba(244,182,74,.4)}
+  .btn-gold{background:var(--gold);color:#33290f;box-shadow:0 10px 26px rgba(200,167,106,.4)}
   .btn-gold:hover{background:var(--gold-deep);color:#fff;transform:translateY(-3px)}
-  .btn-teal{background:var(--teal-2);color:#fff}
-  .btn-teal:hover{background:var(--teal);transform:translateY(-3px)}
+  .btn-deep{background:var(--deep-2);color:#fff}
+  .btn-deep:hover{background:var(--deep);transform:translateY(-3px)}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(22,69,60,.97);backdrop-filter:blur(10px);box-shadow:0 4px 24px rgba(0,0,0,.18);padding:4px 0}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(35,48,61,.97);backdrop-filter:blur(10px);box-shadow:0 4px 24px rgba(0,0,0,.18);padding:4px 0}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .nav-logo{display:flex;align-items:center;gap:15px}
   .nav-logo img{height:42px}
   .nav-links{display:flex;gap:32px;align-items:center}
-  .nav-links a{color:#eef5f0;font-size:.85rem;font-weight:500;transition:.3s}
+  .nav-links a{color:#f2f4f7;font-size:.85rem;font-weight:500;transition:.3s}
   .nav-links a:hover{color:var(--gold)}
-  .nav-cta{background:var(--gold);color:#3a2b06!important;padding:10px 22px!important;border-radius:50px;font-weight:600!important}
-  .nav-cta:hover{background:#fff;color:var(--teal)!important}
+  .nav-cta{background:var(--gold);color:#33290f!important;padding:10px 22px!important;border-radius:50px;font-weight:600!important}
+  .nav-cta:hover{background:#fff;color:var(--deep)!important}
   .burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
 
-  header.banner{position:relative;padding:170px 0 90px;color:#fff;background:linear-gradient(100deg,rgba(16,52,45,.93),rgba(16,52,45,.65)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop') center/cover;text-align:center}
+  header.banner{position:relative;padding:170px 0 90px;color:#fff;background:linear-gradient(100deg,rgba(28,38,49,.93),rgba(28,38,49,.65)),url('images/hero-2.webp') center/cover;text-align:center}
   .banner h1{font-weight:700;font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.2;margin-bottom:14px}
   .banner h1 em{font-style:italic;color:var(--gold);font-weight:600}
-  .banner p{color:#d8e6de;max-width:560px;margin:0 auto}
-  .crumb{margin-top:22px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#bad2c7}
+  .banner p{color:#d3dbe4;max-width:560px;margin:0 auto}
+  .crumb{margin-top:22px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#b9c3d1}
   .crumb a{color:var(--gold)}
 
   .filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:56px 0 40px}
   .filters button{padding:10px 24px;border-radius:50px;border:1.5px solid var(--line);background:var(--white);color:var(--muted);font-family:inherit;font-weight:500;font-size:.85rem;cursor:pointer;transition:.3s}
-  .filters button:hover{border-color:var(--teal-soft);color:var(--teal)}
-  .filters button.on{background:var(--teal-2);border-color:var(--teal-2);color:#fff}
+  .filters button:hover{border-color:var(--deep-soft);color:var(--deep)}
+  .filters button.on{background:var(--deep-2);border-color:var(--deep-2);color:#fff}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:80px}
-  .proj{position:relative;border-radius:var(--r);overflow:hidden;height:320px;display:flex;align-items:flex-end;box-shadow:var(--shadow);transition:.4s}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding-bottom:80px}
+  .proj{position:relative;border-radius:var(--r);overflow:hidden;height:400px;display:flex;align-items:flex-end;box-shadow:var(--shadow);transition:.4s}
   .proj.hide{display:none}
   .proj:hover{transform:translateY(-8px)}
   .proj img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}
-  .proj.noimg{background:linear-gradient(135deg,var(--teal-2),var(--teal))}
+  .proj.noimg{background:linear-gradient(135deg,var(--deep-2),var(--deep))}
   .proj.noimg img.ph{display:none}
   .proj:hover img.ph{transform:scale(1.07)}
-  .proj .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,52,45,0) 30%,rgba(16,52,45,.9) 100%)}
+  .proj .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,38,49,0) 30%,rgba(28,38,49,.9) 100%)}
   .proj .info{position:relative;padding:24px;width:100%;color:#fff}
-  .proj .cat{display:inline-block;font-size:.64rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;background:rgba(244,182,74,.92);color:#3a2b06;padding:4px 12px;border-radius:50px;margin-bottom:10px}
+  .proj .cat{display:inline-block;font-size:.64rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;background:rgba(200,167,106,.92);color:#33290f;padding:4px 12px;border-radius:50px;margin-bottom:10px}
   .proj h4{font-weight:600;font-size:1.12rem;line-height:1.35}
-  .proj small{color:#cfe2d7;font-size:.8rem}
+  .proj small{color:#c6d0dc;font-size:.8rem}
 
-  .cta-band{background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff;text-align:center;padding:74px 22px;border-radius:var(--r);margin-bottom:80px}
+  .cta-band{background:linear-gradient(135deg,var(--deep),var(--deep-2));color:#fff;text-align:center;padding:74px 22px;border-radius:var(--r);margin-bottom:80px}
   .cta-band h2{font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:10px}
   .cta-band h2 em{font-style:italic;color:var(--gold);font-weight:600}
-  .cta-band p{color:#bad2c7;margin-bottom:30px}
+  .cta-band p{color:#b9c3d1;margin-bottom:30px}
   .cta-band .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-  footer{background:#0f332c;color:#9db8ac;padding:50px 0 26px;text-align:center}
+  footer{background:#1a242e;color:#a2aebd;padding:50px 0 26px;text-align:center}
   footer img{height:46px;margin:0 auto 16px}
   footer p{font-size:.85rem;max-width:420px;margin:0 auto 20px}
   .ft-links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
@@ -92,10 +93,10 @@
   .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
   .rv.on{opacity:1;transform:none}
 
-  @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:700px){
-    .grid{grid-template-columns:1fr}
-    .nav-links{position:fixed;top:78px;right:12px;left:12px;background:var(--teal);flex-direction:column;padding:28px;gap:20px;border-radius:var(--r);transform:translateY(-16px) scale(.98);opacity:0;pointer-events:none;transition:.3s;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+    .grid{grid-template-columns:1fr;gap:22px}
+    .proj{height:300px}
+    .nav-links{position:fixed;top:78px;right:12px;left:12px;background:var(--deep);flex-direction:column;padding:28px;gap:20px;border-radius:var(--r);transform:translateY(-16px) scale(.98);opacity:0;pointer-events:none;transition:.3s;box-shadow:0 24px 60px rgba(0,0,0,.3)}
     .nav-links.open{transform:none;opacity:1;pointer-events:auto}
     .burger{display:block}
   }
@@ -120,7 +121,7 @@
   <div class="wrap">
     <span class="kicker">Our Portfolio</span>
     <h1>Every Project, A <em>Promise Kept</em></h1>
-    <p>Homes, commercial spaces, renovations and interiors — built with care, delivered on time.</p>
+    <p>Independent homes, duplex villas and elevation designs — built with care, delivered on time.</p>
     <div class="crumb"><a href="ashwin-builders-lively.html">Home</a> &nbsp;/&nbsp; Projects</div>
   </div>
 </header>
@@ -129,24 +130,18 @@
   <div class="filters" id="filters">
     <button class="on" data-f="all">All</button>
     <button data-f="residential">Residential</button>
-    <button data-f="commercial">Commercial</button>
-    <button data-f="renovation">Renovation</button>
-    <button data-f="interiors">Interiors</button>
+    <button data-f="elevation">Elevations</button>
   </div>
 
   <div class="grid" id="grid">
-    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80&auto=format&fit=crop" alt="Modern duplex"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Modern Duplex Residence</h4><small>Full contract · Key handover</small></div></a>
-    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&auto=format&fit=crop" alt="Family villa"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Family Villa Construction</h4><small>Design &amp; build</small></div></a>
-    <a class="proj rv" data-c="commercial" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80&auto=format&fit=crop" alt="Commercial complex"><div class="shade"></div><div class="info"><span class="cat">Commercial</span><h4>Commercial Complex</h4><small>Shops &amp; office spaces</small></div></a>
-    <a class="proj rv" data-c="interiors" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=80&auto=format&fit=crop" alt="Modular kitchen"><div class="shade"></div><div class="info"><span class="cat">Interiors</span><h4>Modular Kitchen</h4><small>Complete interior package</small></div></a>
-    <a class="proj rv" data-c="renovation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&auto=format&fit=crop" alt="Home makeover"><div class="shade"></div><div class="info"><span class="cat">Renovation</span><h4>Complete Home Makeover</h4><small>Elevation &amp; interiors</small></div></a>
-    <a class="proj rv" data-c="interiors" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80&auto=format&fit=crop" alt="Living room"><div class="shade"></div><div class="info"><span class="cat">Interiors</span><h4>Living Room Finishing</h4><small>False ceiling &amp; woodwork</small></div></a>
-    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80&auto=format&fit=crop" alt="Independent house"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Independent House</h4><small>Ground + 1 · Classic package</small></div></a>
-    <a class="proj rv" data-c="renovation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80&auto=format&fit=crop" alt="Floor addition"><div class="shade"></div><div class="info"><span class="cat">Renovation</span><h4>Additional Floor Build</h4><small>Extension &amp; remodeling</small></div></a>
-    <a class="proj rv" data-c="interiors" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80&auto=format&fit=crop" alt="Bedroom interior"><div class="shade"></div><div class="info"><span class="cat">Interiors</span><h4>Bedroom &amp; Wardrobes</h4><small>Interior finishing</small></div></a>
-    <a class="proj rv" data-c="commercial" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80&auto=format&fit=crop" alt="Office interior"><div class="shade"></div><div class="info"><span class="cat">Commercial</span><h4>Office Interior Fit-out</h4><small>Turnkey delivery</small></div></a>
-    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop" alt="Site development"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Site Development Works</h4><small>Compound wall &amp; approach</small></div></a>
-    <a class="proj rv" data-c="interiors" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80&auto=format&fit=crop" alt="Bathroom interior"><div class="shade"></div><div class="info"><span class="cat">Interiors</span><h4>Bathroom Remodel</h4><small>Premium fittings</small></div></a>
+    <a class="proj rv" data-c="elevation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-01.webp" width="900" height="675" alt="Modern 3BHK residence front elevation framed by trees"><div class="shade"></div><div class="info"><span class="cat">Elevation</span><h4>Modern 3BHK Residence</h4><small>Independent home · 3 bedrooms</small></div></a>
+    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-02.webp" width="900" height="675" alt="Contemporary two-storey family home with compound wall and car porch"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Contemporary Family Home</h4><small>Full contract · Key handover</small></div></a>
+    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-03.webp" width="900" height="675" alt="Duplex villa front elevation with timber cladding"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Duplex Villa — Front Elevation</h4><small>Duplex · Design &amp; build</small></div></a>
+    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-04.webp" width="900" height="675" alt="Minimal grey and white residence with street frontage"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Minimal Grey &amp; White Residence</h4><small>Full contract · Key handover</small></div></a>
+    <a class="proj rv" data-c="elevation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-06.webp" width="900" height="675" alt="Compact urban home elevation in grey and blue"><div class="shade"></div><div class="info"><span class="cat">Elevation</span><h4>Compact Urban Home</h4><small>Narrow plot · Elevation design</small></div></a>
+    <a class="proj rv" data-c="elevation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-05.webp" width="900" height="675" alt="Front elevation study of a 3BHK residence"><div class="shade"></div><div class="info"><span class="cat">Elevation</span><h4>3BHK Front Elevation Study</h4><small>Design &amp; build</small></div></a>
+    <a class="proj rv" data-c="residential" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-07.webp" width="900" height="675" alt="Duplex villa seen from the street with car porch"><div class="shade"></div><div class="info"><span class="cat">Residential</span><h4>Duplex Villa — Street View</h4><small>Duplex · Key handover</small></div></a>
+    <a class="proj rv" data-c="elevation" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener"><img class="ph" loading="lazy" src="images/p-08.webp" width="900" height="675" alt="Compact urban home elevation lit at night"><div class="shade"></div><div class="info"><span class="cat">Elevation</span><h4>Compact Urban Home — Night View</h4><small>Elevation &amp; exterior lighting</small></div></a>
   </div>
 
   <div class="cta-band rv">
@@ -154,7 +149,7 @@
     <p>Get a free consultation and a clear, fixed-price quotation.</p>
     <div class="row">
       <a class="btn btn-gold" href="ashwin-builders-lively.html#contact">Get Free Quote <span class="ar">→</span></a>
-      <a class="btn btn-teal" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener" style="border:1.5px solid rgba(255,255,255,.4)">More on Instagram <span class="ar">↗</span></a>
+      <a class="btn btn-deep" href="https://www.instagram.com/ashwinbuilders_" target="_blank" rel="noopener" style="border:1.5px solid rgba(255,255,255,.4)">More on Instagram <span class="ar">↗</span></a>
     </div>
   </div>
 </div>
