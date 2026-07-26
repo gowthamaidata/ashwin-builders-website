@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#23303d;
-    --deep-2:#33455a;
+    --deep:#2d3f4f;
+    --deep-2:#3d5470;
     --deep-soft:#5a6e85;
     --cream:#faf6f1;
     --white:#ffffff;
@@ -59,10 +59,10 @@
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s;padding:10px 0}
-  nav.solid{background:rgba(35,48,61,.97);backdrop-filter:blur(10px);box-shadow:0 4px 24px rgba(0,0,0,.18);padding:4px 0}
+  nav.solid{background:rgba(45,63,79,.62);backdrop-filter:blur(20px) saturate(140%);box-shadow:0 4px 24px rgba(0,0,0,.08);padding:4px 0}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
   .nav-logo{display:flex;align-items:center;gap:15px}
-  .nav-logo img{height:42px}
+  .nav-logo img{height:42px;width:auto;max-width:68vw;object-fit:contain;object-position:left center;flex:none}
   .nav-links{display:flex;gap:32px;align-items:center}
   .nav-links a{color:#f2f4f7;font-size:.85rem;font-weight:500;position:relative;padding:6px 0;transition:.3s}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;border-radius:2px;background:var(--gold);transition:.3s}
@@ -79,22 +79,25 @@
   .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.8s ease}
   .slide.on{opacity:1;animation:kb 9s linear forwards}
   @keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14)}}
-  .hero .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(28,38,49,.92) 0%,rgba(28,38,49,.72) 45%,rgba(28,38,49,.42) 100%)}
+  .hero .veil{position:absolute;inset:0;z-index:1;background:
+      linear-gradient(100deg,rgba(26,36,46,.48) 0%,rgba(26,36,46,.26) 36%,rgba(26,36,46,.08) 66%,rgba(26,36,46,0) 100%),
+      linear-gradient(to top,rgba(26,36,46,.52) 0%,rgba(26,36,46,.12) 26%,rgba(26,36,46,0) 46%),
+      linear-gradient(to bottom,rgba(26,36,46,.34) 0%,rgba(26,36,46,0) 20%)}
   .hero-in{position:relative;z-index:2;padding-top:150px;padding-bottom:60px}
   .hero .kicker{color:var(--gold)}
-  .hero h1{font-weight:700;font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.16;max-width:760px;margin-bottom:20px}
+  .hero h1{font-weight:700;font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.16;max-width:760px;margin-bottom:20px;text-shadow:0 2px 28px rgba(14,22,30,.7),0 1px 6px rgba(14,22,30,.4)}
   .hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
   .hero-tag{display:flex;align-items:center;gap:14px;font-size:clamp(.78rem,1.5vw,.95rem);font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
   .hero-tag::before{content:"";width:44px;height:1px;background:var(--gold);flex:none}
-  .hero p{color:#d3dbe4;max-width:560px;font-size:1.05rem;margin-bottom:36px}
+  .hero p{color:#e2e8ef;max-width:560px;font-size:1.05rem;margin-bottom:36px;text-shadow:0 2px 18px rgba(14,22,30,.7),0 1px 4px rgba(14,22,30,.4)}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
   .dots{position:relative;z-index:2;display:flex;gap:10px;margin-top:46px}
   .dots button{width:34px;height:4px;border-radius:4px;border:none;background:rgba(255,255,255,.3);cursor:pointer;transition:.3s}
   .dots button.on{background:var(--gold)}
   .hero-stats{position:relative;z-index:2;margin-top:56px;border-top:1px solid rgba(255,255,255,.18);padding-top:34px;display:grid;grid-template-columns:repeat(4,auto);gap:18px 70px;width:fit-content}
-  .hstat b{font-size:2rem;font-weight:700;color:#fff}
+  .hstat b{font-size:2rem;font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(14,22,30,.6)}
   .hstat b i{font-style:normal;color:var(--gold)}
-  .hstat small{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#b9c3d1}
+  .hstat small{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#ccd5e0;text-shadow:0 1px 10px rgba(14,22,30,.6)}
   .scrolldn{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#c6d0dc;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 2.2s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
@@ -118,10 +121,29 @@
   .svc.t-blush{background:var(--blush)}
   .svc.t-sky{background:var(--sky)}
   .svc.t-lilac{background:var(--lilac)}
-  .svc .ic{width:58px;height:58px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:1.6rem;margin-bottom:20px;box-shadow:0 8px 20px rgba(35,48,61,.08)}
+  .svc .ic{width:58px;height:58px;border-radius:16px;background:#fff;display:grid;place-items:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(35,48,61,.08);color:var(--gold-deep);transition:.35s}
+  .svc .ic svg{width:27px;height:27px;display:block}
+  .svc:hover .ic{transform:translateY(-2px);box-shadow:0 12px 26px rgba(35,48,61,.14)}
   .svc h3{font-size:1.12rem;font-weight:600;color:var(--deep);margin-bottom:8px}
   .svc p{font-size:.9rem;color:var(--muted)}
   .svc .num{position:absolute;top:24px;right:26px;font-weight:700;font-size:1rem;color:rgba(35,48,61,.18)}
+
+  /* photo-backed service cards */
+  .svc.photo{background:var(--deep);isolation:isolate}
+  .svc.photo::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .7s ease}
+  .svc.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(20,29,38,.88) 4%,rgba(20,29,38,.68) 38%,rgba(20,29,38,.30) 72%,rgba(20,29,38,.18) 100%)}
+  .svc.photo:hover::before{transform:scale(1.07)}
+  .svc.photo h3{color:#fff}
+  .svc.photo p{color:#d5dde6}
+  .svc.photo .num{color:rgba(255,255,255,.5)}
+  .svc.photo .ic{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.34);box-shadow:none;color:#fff;backdrop-filter:blur(4px)}
+  .svc.photo:hover .ic{background:rgba(255,255,255,.24);box-shadow:none}
+  .svc.p1::before{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop')}
+  .svc.p2::before{background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop')}
+  .svc.p3::before{background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&auto=format&fit=crop')}
+  .svc.p4::before{background-image:url('https://images.unsplash.com/photo-1574739782594-db4ead022697?w=800&q=80&auto=format&fit=crop')}
+  .svc.p5::before{background-image:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80&auto=format&fit=crop')}
+  .svc.p6::before{background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop')}
 
   /* PACKAGES */
   #packages{background:var(--cream)}
@@ -209,7 +231,8 @@
   .why:nth-child(odd){background:var(--blush)}
   .why:nth-child(even){background:var(--sky)}
   .why:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .why .ic{font-size:1.8rem;margin-bottom:14px}
+  .why .ic{margin-bottom:14px;color:var(--gold-deep);line-height:0}
+  .why .ic svg{width:32px;height:32px;display:block}
   .why h4{font-weight:600;font-size:1.05rem;color:var(--deep);margin-bottom:6px}
   .why p{font-size:.88rem;color:var(--muted)}
 
@@ -232,7 +255,8 @@
   #contact p.sub{color:#b9c3d1}
   .ct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
   .ct-info .item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-  .ct-info .ic{width:48px;height:48px;flex:none;border-radius:14px;background:rgba(200,167,106,.16);border:1px solid rgba(200,167,106,.4);display:grid;place-items:center;font-size:1.2rem}
+  .ct-info .ic{width:48px;height:48px;flex:none;border-radius:14px;background:rgba(200,167,106,.16);border:1px solid rgba(200,167,106,.4);display:grid;place-items:center;color:var(--gold)}
+  .ct-info .ic svg{width:22px;height:22px;display:block}
   .ct-info b{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#b9c3d1;margin-bottom:2px}
   .ct-info a,.ct-info span{font-size:1.05rem;font-weight:500;color:#fff;transition:.3s}
   .ct-info a:hover{color:var(--gold)}
@@ -247,9 +271,9 @@
   .wa-note{text-align:center;font-size:.78rem;color:var(--muted);margin-top:12px;font-style:italic}
 
   /* FOOTER */
-  footer{background:#1a242e;color:#a2aebd;padding:64px 0 28px}
+  footer{background:#24323f;color:#aab6c4;padding:64px 0 28px}
   .ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .ft-top img{height:48px;margin-bottom:18px}
+  .ft-top img{height:42px;width:auto;max-width:100%;object-fit:contain;object-position:left center;margin-bottom:18px;aspect-ratio:1000/178}
   .ft-top p{font-size:.88rem;max-width:320px}
   .ft-top h4{font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:16px}
   .ft-top a{display:block;font-size:.88rem;padding:4px 0;transition:.3s}
@@ -283,6 +307,10 @@
     form.quote .row{grid-template-columns:1fr}
     section{padding:66px 0}
     .hero-in{padding-top:120px;padding-bottom:40px}
+    .ft-top{grid-template-columns:1fr;gap:34px}
+    .ft-top img{height:38px}
+    .hero .veil{background:
+      linear-gradient(to bottom,rgba(26,36,46,.44) 0%,rgba(26,36,46,.18) 26%,rgba(26,36,46,.22) 62%,rgba(26,36,46,.56) 100%)}
   }
 </style>
 </head>
@@ -348,12 +376,12 @@
     <h2 class="sec rv">One Team for <em>Everything</em> You Need</h2>
     <p class="sub rv">Simple, clear services — from laying the foundation to handing over a fully finished space.</p>
     <div class="svc-grid rv" style="text-align:left">
-      <div class="svc t-sand"><span class="num">01</span><div class="ic">🏠</div><h3>Full Home Construction</h3><p>Your complete house built on full contract — quality materials, clear milestones, keys on time.</p></div>
-      <div class="svc t-blush"><span class="num">02</span><div class="ic">🏢</div><h3>Commercial Construction</h3><p>Shops, offices and warehouses built to plan, on schedule and within your budget.</p></div>
-      <div class="svc t-sky"><span class="num">03</span><div class="ic">📐</div><h3>Design &amp; Build</h3><p>2D/3D designs, plans and approvals combined with expert construction — one point of contact.</p></div>
-      <div class="svc t-lilac"><span class="num">04</span><div class="ic">🔨</div><h3>Renovation &amp; Remodeling</h3><p>Extensions, extra floors, kitchen and bathroom makeovers — new life for your existing space.</p></div>
-      <div class="svc t-blush"><span class="num">05</span><div class="ic">🛋️</div><h3>Interior Works</h3><p>False ceilings, wardrobes, modular kitchens, painting and complete interior finishing.</p></div>
-      <div class="svc t-sand"><span class="num">06</span><div class="ic">🛣️</div><h3>Infrastructure &amp; Materials</h3><p>Compound walls, site development and quality construction materials at fair rates.</p></div>
+      <div class="svc photo p1"><span class="num">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.6 9.6V20a1 1 0 0 0 1 1h10.8a1 1 0 0 0 1-1V9.6"/><path d="M9.8 21v-6.6h4.4V21"/></svg></div><h3>Full Home Construction</h3><p>Your complete house built on full contract — quality materials, clear milestones, keys on time.</p></div>
+      <div class="svc photo p2"><span class="num">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 21h18.8"/><path d="M5 21V5.2a1 1 0 0 1 1-1h6.6a1 1 0 0 1 1 1V21"/><path d="M13.6 21V10h4.6a1 1 0 0 1 1 1v10"/><path d="M7.6 8h3.4M7.6 11.6h3.4M7.6 15.2h3.4M16 14h1.4M16 17.4h1.4"/></svg></div><h3>Commercial Construction</h3><p>Shops, offices and warehouses built to plan, on schedule and within your budget.</p></div>
+      <div class="svc photo p3"><span class="num">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.6"/><path d="M3 10.2h6.6"/><path d="M9.6 4v16"/><path d="M9.6 15.2H21"/></svg></div><h3>Design &amp; Build</h3><p>2D/3D designs, plans and approvals combined with expert construction — one point of contact.</p></div>
+      <div class="svc photo p4"><span class="num">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.6 8.4 4.5 15.5a1.8 1.8 0 0 0 0 2.5l1.5 1.5a1.8 1.8 0 0 0 2.5 0l7.1-7.1"/><path d="M10.4 6.7 13 4.1a1 1 0 0 1 1.4 0l5.5 5.5a1 1 0 0 1 0 1.4l-2.6 2.6a1 1 0 0 1-1.4 0l-5.5-5.5a1 1 0 0 1 0-1.4Z"/></svg></div><h3>Renovation &amp; Remodeling</h3><p>Extensions, extra floors, kitchen and bathroom makeovers — new life for your existing space.</p></div>
+      <div class="svc photo p5"><span class="num">05</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.4 11.2V7.4a1.6 1.6 0 0 1 1.6-1.6h12a1.6 1.6 0 0 1 1.6 1.6v3.8"/><path d="M2.6 12.9a1.8 1.8 0 0 1 3.6 0v3.3h11.6v-3.3a1.8 1.8 0 0 1 3.6 0v5.2a1 1 0 0 1-1 1H3.6a1 1 0 0 1-1-1v-5.2Z"/><path d="M6.2 19.1v1.7M17.8 19.1v1.7"/></svg></div><h3>Interior Works</h3><p>False ceilings, wardrobes, modular kitchens, painting and complete interior finishing.</p></div>
+      <div class="svc photo p6"><span class="num">06</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.6"/><path d="M3 9.7h18M3 14.3h18"/><path d="M9 5v4.7M15 9.7v4.6M9 14.3V19"/></svg></div><h3>Infrastructure &amp; Materials</h3><p>Compound walls, site development and quality construction materials at fair rates.</p></div>
     </div>
   </div>
 </section>
@@ -504,12 +532,12 @@
     <h2 class="sec rv">Built on Trust, Delivered with <em>Quality</em></h2>
     <p class="sub rv">Why families and businesses choose us for their biggest investment.</p>
     <div class="why-grid rv" style="text-align:left">
-      <div class="why"><div class="ic">💰</div><h4>Transparent Fixed Pricing</h4><p>Clear quotations, no hidden charges — the price we agree is the price you pay.</p></div>
-      <div class="why"><div class="ic">✅</div><h4>Quality at Every Stage</h4><p>Strict material and workmanship checks from foundation to finishing.</p></div>
-      <div class="why"><div class="ic">⏰</div><h4>On-Time Handover</h4><p>Milestone-based schedules keep your project on track to the promised date.</p></div>
-      <div class="why"><div class="ic">🤝</div><h4>One Team, End to End</h4><p>Construction and interiors by one team — no coordination headaches.</p></div>
-      <div class="why"><div class="ic">📱</div><h4>Regular Updates</h4><p>Photos and videos of your site shared regularly — you're never in the dark.</p></div>
-      <div class="why"><div class="ic">🛡️</div><h4>Workmanship Warranty</h4><p>Post-handover support and warranty on workmanship. We stand behind our work.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 12.9V4.8a1.2 1.2 0 0 1 1.2-1.2h8.1a1.2 1.2 0 0 1 .85.35l7.1 7.1a1.2 1.2 0 0 1 0 1.7l-8.1 8.1a1.2 1.2 0 0 1-1.7 0l-7.1-7.1a1.2 1.2 0 0 1-.35-.85Z"/><circle cx="8" cy="8" r="1.4"/></svg></div><h4>Transparent Fixed Pricing</h4><p>Clear quotations, no hidden charges — the price we agree is the price you pay.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5H7.4A1.4 1.4 0 0 0 6 5.9v13.2a1.4 1.4 0 0 0 1.4 1.4h9.2a1.4 1.4 0 0 0 1.4-1.4V5.9a1.4 1.4 0 0 0-1.4-1.4H15"/><rect x="9" y="2.8" width="6" height="3.5" rx="1"/><path d="m8.8 13.2 2.1 2.1 4.3-4.3"/></svg></div><h4>Quality at Every Stage</h4><p>Strict material and workmanship checks from foundation to finishing.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg></div><h4>On-Time Handover</h4><p>Milestone-based schedules keep your project on track to the promised date.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.6 20.4v-1.8a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.6v1.8"/><circle cx="9.3" cy="7.8" r="3.4"/><path d="M21 20.4v-1.8a3.6 3.6 0 0 0-2.7-3.5"/><path d="M15.6 4.6a3.6 3.6 0 0 1 0 6.9"/></svg></div><h4>One Team, End to End</h4><p>Construction and interiors by one team — no coordination headaches.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 8.6A1.6 1.6 0 0 1 5 7h2.3l1.3-2.1h6.8L16.7 7H19a1.6 1.6 0 0 1 1.6 1.6v9a1.6 1.6 0 0 1-1.6 1.6H5a1.6 1.6 0 0 1-1.6-1.6v-9Z"/><circle cx="12" cy="12.8" r="3.3"/></svg></div><h4>Regular Updates</h4><p>Photos and videos of your site shared regularly — you're never in the dark.</p></div>
+      <div class="why"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.4s7.4-3.4 7.4-9.1V5.9L12 3 4.6 5.9v6.4c0 5.7 7.4 9.1 7.4 9.1Z"/><path d="m8.9 11.9 2.2 2.2 4.1-4.3"/></svg></div><h4>Workmanship Warranty</h4><p>Post-handover support and warranty on workmanship. We stand behind our work.</p></div>
     </div>
   </div>
 </section>
@@ -536,11 +564,11 @@
     <p class="sub rv">Tell us about your project — we'll get back to you within 24 hours.</p>
     <div class="ct-grid rv">
       <div class="ct-info">
-        <div class="item"><div class="ic">📞</div><div><b>Call Us</b><a href="tel:+918973103758">+91 89731 03758</a></div></div>
-        <div class="item"><div class="ic">✉️</div><div><b>Email</b><a href="mailto:ashwinbuilders84@gmail.com">ashwinbuilders84@gmail.com</a></div></div>
-        <div class="item"><div class="ic">💬</div><div><b>WhatsApp</b><a href="https://wa.me/918973103758?text=Hi%20Ashwin%20Builders%2C%20I%27m%20interested%20in%20your%20construction%20services." target="_blank" rel="noopener">Chat with us instantly</a></div></div>
-        <div class="item"><div class="ic">📍</div><div><b>Service Area</b><span>Tamil Nadu &amp; surrounding regions</span></div></div>
-        <div class="item"><div class="ic">🕐</div><div><b>Working Hours</b><span>Mon – Sat · 9 AM – 7 PM</span></div></div>
+        <div class="item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.4 16.9v2.8a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.7 4.9 1.9 1.9 0 0 1 4.6 2.8h2.8a1.9 1.9 0 0 1 1.9 1.6c.12.9.34 1.79.65 2.64a1.9 1.9 0 0 1-.43 2L8.34 10.2a15 15 0 0 0 5.6 5.6l1.18-1.18a1.9 1.9 0 0 1 2-.43c.85.31 1.74.53 2.64.65a1.9 1.9 0 0 1 1.64 2.06Z"/></svg></div><div><b>Call Us</b><a href="tel:+918973103758">+91 89731 03758</a></div></div>
+        <div class="item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="4.8" width="18.8" height="14.4" rx="2"/><path d="m3.4 6.6 8.6 6 8.6-6"/></svg></div><div><b>Email</b><a href="mailto:ashwinbuilders84@gmail.com">ashwinbuilders84@gmail.com</a></div></div>
+        <div class="item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 11.6a7.9 7.9 0 0 1-8.5 7.9 9 9 0 0 1-2.6-.4L4.2 21l1.9-6.1a7.9 7.9 0 0 1-.4-2.4 7.9 7.9 0 0 1 7.9-8.5 7.9 7.9 0 0 1 7.3 7.6Z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/918973103758?text=Hi%20Ashwin%20Builders%2C%20I%27m%20interested%20in%20your%20construction%20services." target="_blank" rel="noopener">Chat with us instantly</a></div></div>
+        <div class="item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 6-8 12.2-8 12.2s-8-6.2-8-12.2a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/></svg></div><div><b>Service Area</b><span>Tamil Nadu &amp; surrounding regions</span></div></div>
+        <div class="item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg></div><div><b>Working Hours</b><span>Mon – Sat · 9 AM – 7 PM</span></div></div>
       </div>
       <form class="quote" id="quoteForm">
         <h3>Request a Free Quote</h3>
