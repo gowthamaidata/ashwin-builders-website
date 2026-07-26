@@ -389,7 +389,17 @@
   .case .img,.ins .img{height:190px}
 }
 </style>
-</head>
+<style>
+/* Premium logo improvements */
+.navbar-brand img,.logo img,header img,footer img{
+height:64px!important;width:auto!important;max-height:64px!important;
+object-fit:contain;filter:contrast(1.15) brightness(1.05) saturate(1.05)}
+.navbar-brand,.logo{display:flex;align-items:center;gap:14px;margin-left:16px}
+header nav,header .navbar{padding:12px 0!important}
+@media(max-width:768px){
+.navbar-brand img,.logo img,header img,footer img{height:52px!important;max-height:52px!important}
+.navbar-brand,.logo{margin-left:8px}}
+</style></head>
 <body>
 <!-- NAVIGATION -->
 <nav id="nav">
@@ -510,7 +520,6 @@
 </div>
 </div>
 </section>
-
 <!-- SERVICES -->
 <section id="services">
 <div class="blob b1"></div><div class="blob b2"></div>
@@ -719,7 +728,6 @@
 </div>
 </div>
 </section>
-
 <!-- WHY US -->
 <section id="why">
 <div class="wrap center">
@@ -781,7 +789,6 @@
 </div>
 </div>
 </section>
-
 <!-- TESTIMONIALS -->
 <section id="testimonials">
 <div class="wrap center">
@@ -828,7 +835,6 @@
 </div>
 </div>
 </section>
-
 <section id="insights">
 <div class="wrap">
 <span class="kicker rv">Insights</span>
@@ -865,7 +871,6 @@
 </div>
 </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact">
 <div class="wrap">
